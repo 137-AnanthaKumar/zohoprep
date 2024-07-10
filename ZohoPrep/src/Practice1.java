@@ -6,7 +6,7 @@ public class Practice1 {
     public static void main(String[] args) {
         
         
-       String input="a5b10";
+       String input="a10b1";
        String output=constructOutput(input);
        
        // out put wwwwwwwwwwwwwwwwwbbbbbbb

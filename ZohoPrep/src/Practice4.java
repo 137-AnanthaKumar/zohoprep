@@ -4,26 +4,21 @@ public class Practice4 {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         String a="test123string";
-        String b="1234";
+        String b="123";
         
-        if (a.contains(b)) {
-            System.out.println("String b is available in string A");
-            char[] ac = a.toCharArray();
-            char[] bc = b.toCharArray();
-            String initialB = String.valueOf(bc[0]);
-            
-            for (int i = 0; i < ac.length; i++) {
-                if (initialB.equalsIgnoreCase(String.valueOf(ac[i]))) {
-                    System.out.println("Found the val: " + initialB + " " + ac[i]);
-                    System.out.println("Found the index: " + i);
+        if(a.contains(b)) {
+            System.out.println("b is available in a");
+            char bval=b.charAt(0);
+            for(int i=0;i<a.length();i++) {
+                if(bval==a.charAt(i)) {
+                    System.out.println("Starting index is : "+i);
                     break;
                 }
             }
-        
             
-            
-        }else{
-         System.out.println("-1");
+        }else {
+            System.out.println("b is not available in a");
+
         }
 
     }
