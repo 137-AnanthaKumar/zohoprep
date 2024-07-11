@@ -6,14 +6,53 @@ public class Practice1 {
     public static void main(String[] args) {
         
         
-       String input="a10b1";
-       String output=constructOutput(input);
+       //String input="a10b1";
+       String input = "a10b5";
+       printLetters1(input);
+      // String output=constructOutput(input);
        
        // out put wwwwwwwwwwwwwwwwwbbbbbbb
       //out put aaaaabbbbbbbbbb
 
-       System.out.println(output);
+       //System.out.println(output);
     }
+    
+    public static void printLetters1(String input) {
+        
+        char englistLetter=0;
+        StringBuilder number=new StringBuilder();
+        for(int i=0;i<input.length();i++) {
+            char a=input.charAt(i);
+           
+            
+            if(Character.isLetter(a)) {
+               
+                 if( number.length()>0) {
+                     for(int j=0;j<Integer.parseInt(String.valueOf(number)); j++) {
+                         System.out.print(englistLetter);
+                         
+                     }
+                 }
+                 englistLetter=a;
+                 
+                
+                 number=new StringBuilder();
+            }else if(Character.isDigit(a)) {
+                number.append(a);
+                
+            }
+            
+            
+            
+        }
+        
+        for(int j=0;j<Integer.parseInt(String.valueOf(number)); j++) {
+            System.out.print(englistLetter);
+            
+        }
+        
+    }
+    
 
     private static String constructOutput(String input) {
        
@@ -34,6 +73,39 @@ public class Practice1 {
        sam();
         return output.toString();
 
+    }
+    
+    
+    public static void printLetters(String input) {
+        char currentLetter = 0;
+        StringBuilder number = new StringBuilder();
+
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+
+            if (Character.isLetter(ch)) {
+                // If we have a previous letter and number, print it
+                if (currentLetter != 0 && number.length() > 0) {
+                    int count = Integer.parseInt(number.toString());
+                    for (int j = 0; j < count; j++) {
+                        System.out.print(currentLetter);
+                    }
+                }
+                // Update current letter and reset number
+                currentLetter = ch;
+                number = new StringBuilder();
+            } else if (Character.isDigit(ch)) {
+                number.append(ch);
+            }
+        }
+
+        // Print the last letter and number
+        if (currentLetter != 0 && number.length() > 0) {
+            int count = Integer.parseInt(number.toString());
+            for (int j = 0; j < count; j++) {
+                System.out.print(currentLetter);
+            }
+        }
     }
     
     
